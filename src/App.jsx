@@ -20,9 +20,9 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-emerald-100 via-lime-50 to-white text-slate-800 antialiased">
       <header className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between sticky top-4 backdrop-blur-md bg-white/90 z-20 shadow-md rounded-2xl border border-emerald-200">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-emerald-200 to-lime-200 rounded-2xl flex items-center justify-center shadow">
-            <Atom size={26} className="text-emerald-700" />
-          </div>
+          <div className="w-20 h-20 flex items-center justify-center shadow rounded-full overflow-hidden">
+  <img src="/images/logo.png" alt="Logo" className="w-full h-full object-cover" />
+</div>
           <div>
             <h1 className="font-bold text-xl text-emerald-800">Myco-grow</h1>
             <p className="text-xs text-slate-500">Bioinóculo micorrícico — suelos sanos, cultivos seguros</p>
@@ -34,6 +34,7 @@ export default function App() {
           <button onClick={() => setActiveTab("how")} className={`${activeTab === 'how' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Tecnología</button>
           <button onClick={() => setActiveTab("impact")} className={`${activeTab === 'impact' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Impacto</button>
           <button onClick={() => setActiveTab("simulator")} className={`${activeTab === 'simulator' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Simulador</button>
+<button onClick={() => setActiveTab("productos")} className={`${activeTab === 'productos' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Nuestros productos</button>
           <button onClick={() => setShowTeam(true)} className="flex items-center gap-1 hover:text-emerald-600"><Users size={16}/> Equipo</button>
         </nav>
       </header>
@@ -52,19 +53,19 @@ export default function App() {
 
           <div className="relative">
             <div className="rounded-2xl shadow-2xl overflow-hidden h-80 w-full">
-              <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80" alt="Campo agrícola" className="w-full h-full object-cover" />
+              <img src="/images/producto.jpg" alt="producto" className="w-full h-auto object-cover mx-auto" />
             </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-3 rounded-xl shadow text-emerald-900 font-bold">Simulación de riesgo</div>
           </div>
         </section>
 
         <section className="mt-20 bg-white rounded-2xl p-10 shadow-xl border border-emerald-100">
           <div className="flex gap-6 border-b pb-4 text-sm overflow-x-auto">
-            <button onClick={() => setActiveTab("overview")} className={`${activeTab==='overview'?'bg-emerald-100 text-emerald-900':''} px-4 py-2 rounded-md`}>Overview</button>
-            <button onClick={() => setActiveTab("how")} className={`${activeTab==='how'?'bg-emerald-100 text-emerald-900':''} px-4 py-2 rounded-md`}>Tecnología</button>
-            <button onClick={() => setActiveTab("impact")} className={`${activeTab==='impact'?'bg-emerald-100 text-emerald-900':''} px-4 py-2 rounded-md`}>Impactos</button>
-            <button onClick={() => setActiveTab("simulator")} className={`${activeTab==='simulator'?'bg-emerald-100 text-emerald-900':''} px-4 py-2 rounded-md`}>Simulador</button>
+            <button onClick={() => setActiveTab("overview")} className={`${activeTab === 'overview' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Overview</button>
+            <button onClick={() => setActiveTab("how")} className={`${activeTab === 'how' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Tecnología</button>
+            <button onClick={() => setActiveTab("impact")} className={`${activeTab === 'impact' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Impactos</button>
+            <button onClick={() => setActiveTab("simulator")} className={`${activeTab === 'simulator' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Simulador</button>
           </div>
+
 
           {activeTab === "overview" && (
             <div className="mt-8 grid md:grid-cols-2 gap-12">
@@ -160,7 +161,78 @@ export default function App() {
             </div>
           )}
         </section>
+<section className="mt-16 mb-10">
+          <h2 className="text-3xl font-bold text-emerald-900 text-center mb-12">Nuestros Productos</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Producto 1 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-emerald-100 hover:shadow-xl transition-shadow duration-300">
+              <div className="p-6">
+                <div className="w-full h-61 bg-emerald-50 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/producto1.png" 
+                    alt="Producto 1" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h4 className="font-semibold text-lg text-emerald-900">Paquete Básico</h4>
+                  <p className="text-sm text-slate-600 mt-2">Contenido: 30 gramos</p>
+                  <p className="text-xs text-slate-500 mt-1">Ideal para huertos pequeños</p>
+                  <button className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300">
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+            </div>
 
+            {/* Producto 2 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-emerald-100 hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+              <div className="p-6">
+                <div className="w-full h-61 bg-emerald-50 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/producto2.png" 
+                    alt="Producto 2" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h4 className="font-semibold text-lg text-emerald-900">Paquete Estándar</h4>
+                  <p className="text-sm text-slate-600 mt-2">Contenido: 500 gramos</p>
+                  <p className="text-xs text-slate-500 mt-1">Perfecto para cultivos medianos</p>
+                  <button className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300">
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Producto 3 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-emerald-100 hover:shadow-xl transition-shadow duration-300">
+              <div className="p-6">
+                <div className="w-full h-61 bg-emerald-50 rounded-lg flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/images/producto3.png" 
+                    alt="Producto 3" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="mt-4">
+                  <h4 className="font-semibold text-lg text-emerald-900">Paquete Premium</h4>
+                  <p className="text-sm text-slate-600 mt-2">Contenido: 1 kilogramo</p>
+                  <p className="text-xs text-slate-500 mt-1">Para grandes extensiones agrícolas</p>
+                  <button className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300">
+                    Agregar al carro
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <p className="text-slate-600 text-sm">Todos nuestros productos incluyen instrucciones detalladas de aplicación</p>
+          </div>
+        </section>
         <section className="max-w-7xl mx-auto px-6 mt-16">
           <h2 className="text-2xl font-bold text-emerald-900 text-center">Beneficios más detallados</h2>
           <div className="mt-8 grid md:grid-cols-3 gap-8">
@@ -252,7 +324,7 @@ export default function App() {
             </div>
             <div className="p-5 bg-white rounded-xl shadow">
               <h4 className="font-semibold text-emerald-900">¿Funciona en todos los cultivos?</h4>
-              <p className="mt-2 text-sm text-slate-700">Es más efectivo en hortalizas, frutales y cereales.</p>
+              <p className="mt-2 text-sm text-slate-700">Depende del cultivo a tratar , ya que el producto es diseñado especificamente para la planta que tiene el consumidor.</p>
             </div>
             <div className="p-5 bg-white rounded-xl shadow">
               <h4 className="font-semibold text-emerald-900">¿Requiere aplicaciones frecuentes?</h4>
@@ -270,8 +342,56 @@ export default function App() {
             </div>
           </div>
         )}
-
+{showTeam && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+            {/* ... contenido del modal ... */}
+          </div>
+        )}
       </main>
+<footer className="mt-32 py-8 bg-emerald-900 text-white rounded-2xl shadow-xl">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div>
+                <h3 className="text-xl font-bold text-emerald-100">Myco-grow</h3>
+                <p className="mt-2 text-emerald-200 text-sm">Bioinóculo micorrícico</p>
+                <p className="mt-4 flex items-center gap-2 text-emerald-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href="mailto:mycogrow@gmail.com" className="hover:text-white transition">mycogrow@gmail.com</a>
+                </p>
+              </div>
+              
+              <div className="flex flex-col items-center md:items-end">
+                <h4 className="font-semibold text-emerald-100 mb-4">Síguenos en redes</h4>
+                <div className="flex gap-6">
+                  <a href="https://instagram.com/mycogrow" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                    <div className="bg-emerald-800 p-3 rounded-full hover:bg-emerald-700">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-xs text-center mt-2 text-emerald-200">@mycogrow</p>
+                  </a>
+                  
+                  <a href="https://twitter.com/mycogrowofficial" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+                    <div className="bg-emerald-800 p-3 rounded-full hover:bg-emerald-700">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                      </svg>
+                    </div>
+                    <p className="text-xs text-center mt-2 text-emerald-200">@mycogrowofficial</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-emerald-700 text-center">
+              <p className="text-sm text-emerald-300">© {new Date().getFullYear()} Myco-grow. Todos los derechos reservados.</p>
+              <p className="text-xs text-emerald-400 mt-2">Desarrollado para una agricultura más segura y sostenible</p>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 }
