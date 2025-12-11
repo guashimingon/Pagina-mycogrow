@@ -34,7 +34,7 @@ export default function App() {
           <button onClick={() => setActiveTab("how")} className={`${activeTab === 'how' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Tecnología</button>
           <button onClick={() => setActiveTab("impact")} className={`${activeTab === 'impact' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Impacto</button>
           <button onClick={() => setActiveTab("simulator")} className={`${activeTab === 'simulator' ? 'text-emerald-900 font-semibold' : ''} hover:text-emerald-600`}>Simulador</button>
-<button onClick={() => setActiveTab("productos")} className={`${activeTab === 'productos' ? 'bg-emerald-100 text-emerald-900' : ''} px-4 py-2 rounded-md`}>Nuestros productos</button>
+
           <button onClick={() => setShowTeam(true)} className="flex items-center gap-1 hover:text-emerald-600"><Users size={16}/> Equipo</button>
         </nav>
       </header>
